@@ -19,6 +19,9 @@ const PostForm = ({create}) => {
     return (
         <form>
             <MyInput
+                placeholder='test'
+            />
+            <MyInput
                 value={post.title}
                 onChange={e => setPost({...post,title: e.target.value})}
                 type='text'
