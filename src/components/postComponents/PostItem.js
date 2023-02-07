@@ -1,20 +1,21 @@
-import React, {useState} from 'react';
+import {MyButton} from "../UI/button/MyButton";
 
-
-const PostItem = ({post}) => {
-    const {id,title,body} = post
+const PostItem = ({post,number,remove}) => {
+    const {title,body} = post
 
     return (
         <div className={'App'}>
            <div className={'post'}>
                <div className={'pst__content'}>
-                   <strong> {id} - {title}</strong>
+                   <strong> {number} - {title}</strong>
                    <div>
                        {body}
                    </div>
                </div>
                <div>
-                   <button className={'post_btns'}>delete</button>
+                    <MyButton onClick={() =>  remove(post)}>
+                        Delete
+                    </MyButton>
                </div>
            </div>
         </div>
